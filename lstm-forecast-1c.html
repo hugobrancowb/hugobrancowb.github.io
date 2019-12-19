@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>Forecasting Sales using LSTM Neural Networks - Hello, world! I'm David Freeman</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Hello, world! I'm David Freeman" property="og:site_name">
+  
+    <meta content="Forecasting Sales using LSTM Neural Networks" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Forecasting Sales for a big electronic store using Long Short-Term Memory Recurrent Neural Networks." property="og:description">
+  
+  
+    <meta content="/lstm-forecast-1c" property="og:url">
+  
+  
+    <meta content="2019-12-19T12:00:00-03:00" property="article:published_time">
+    <meta content="/about/" property="article:author">
+  
+  
+    <meta content="/assets/img/graficosvendas1c_cover.png" property="og:image">
+  
+  
+    
+    <meta content="en" property="article:section">
+    
+  
+  
+    
+    <meta content="Artificial Intelligence" property="article:tag">
+    
+    <meta content="Data Analysis" property="article:tag">
+    
+    <meta content="Matlab" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Forecasting Sales using LSTM Neural Networks">
+  
+  
+    <meta name="twitter:url" content="/lstm-forecast-1c">
+  
+  
+    <meta name="twitter:description" content="Forecasting Sales for a big electronic store using Long Short-Term Memory Recurrent Neural Networks.">
+  
+  
+    <meta name="twitter:image:src" content="/assets/img/graficosvendas1c_cover.png">
+  
+
+	<meta name="description" content="Forecasting Sales for a big electronic store using Long Short-Term Memory Recurrent Neural Networks.">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.jpg" alt="Hugo Branco"></a>
+      </div>
+      <div class="author-name">Hugo Branco</div>
+      <p>Automation and Control Engineering student at Universidade de Pernambuco (UPE - Brazil)</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>      
+    <section class="contact">
+      <h3 class="contact-title">Contact</h3>
+      <ul>
+        
+        
+        
+          <li class="github"><a href="http://github.com/hugobrancowb" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/hugo-branco-627801136" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:hugobrancowb@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <ul class="languages">      
+      
+      
+      <li><a href="../">Português</a></li>
+      
+      
+      <li><a href="/en/">English</a></li>
+      
+    </ul>
+    <div class="copyright">
+      <p>2019 &copy; Hugo Branco</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/assets/img/graficosvendas1c_cover.png alt="Forecasting Sales using LSTM Neural Networks">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Forecasting Sales using LSTM Neural Networks</h1>
+        <div class="page-date"><span>2019, Dec 19&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+           <!-- Idiomas -->
+            
+            
+            
+              <div class="lang-options">
+                  <ul>
+                  
+                  <li><a href="/lstm-forecast-1c" class='highlighter-rouge' title='View in English'>English</a></li>
+                  
+                  <li><a href="/lstm-previsao-vendas" class='highlighter-rouge' title='View in Português'>Português</a></li>
+                  
+                  </ul>
+              </div>
+            
+          
+      </header>
+      <h2 id="introduction">Introduction</h2>
+<p>It was provided by <a href="http://www.1c.com/">1C Company</a> a time-series dataset consisting of daily sales data for a data science competition hold by <a href="https://www.kaggle.com/">Kaggle</a>. The goal was to predict the company’s next month profit. Overall, <strong>2 million sales</strong> are used for calculations made using Matlab as main language/software for analysis and prediction.</p>
+
+<h2 id="database">Database</h2>
+<p>The database used in this project consists of a daily sales record of a chain of stores focused on the technology and entertainment market. The sales table, provided in <code class="highlighter-rouge">.cvs</code> format, contains information on the product’s date of sale, its registration code, quantity and its profits from sales in rubles (Russian currency); all records are within the range of 01/01/2013 and 09/30/2014 and your data does not need to go through <em>data cleaning</em>.</p>
+
+<p><img src="/assets/img/1CPS-exemplo.png" alt="A sample from the database." /></p>
+
+<h2 id="preliminary-data-analysis">Preliminary Data Analysis</h2>
+<h3 id="product-review">Product Review</h3>
+<p>We start by segmenting the sales data so that each product sold is analyzed isolated. From segmentation, we can analyze which are the best selling products using criteria such as quantity and value collected.</p>
+
+<p><img src="/assets/img/graficosvendas1c_top10-profits.png" alt="The top 10 most profitable products between the 21-month known data range." /></p>
+
+<p>Considering the figure above, it is observed that consoles and games build most part of the ranking but it would be necessary to observe a large amount of data to say which of the niches gives the highest return to the company. Therefore, this kind of analysis is made using a slightly different algorithm.</p>
+
+<h3 id="product-type-analysis">Product Type Analysis</h3>
+<p>The database makes associates each product (<code class="highlighter-rouge">item_id</code>) to the category that best represents it (<code class="highlighter-rouge">item_categories</code>). To connect this data you would need to cross data from three <code class="highlighter-rouge">.cvs</code> files to get one of <strong>84 categories</strong> using the<code class="highlighter-rouge">item_id</code> of each product as an input. The categories are written in Russian in the original database and were translated from Russian by <a href="https://daveeargle.com/">David Eargle</a>. The results obtained are presented below.</p>
+
+<p><img src="/assets/img/graficosvendas1c_top10-profits-categories.png" alt="The top 10 most profitable categories of products between the 21-month known data range." /></p>
+
+<p>The analysis tells us that <strong>PS3 games were the most profitable products for the company</strong> (mind the sales occurred between 2013 and 2014), <strong>summing up to 15% of the total profit</strong> generated in sales. The figure below shows the profits of all 84 categories.</p>
+
+<p><img src="/assets/img/graficosvendas1c_allprofits.png" alt="Profits from each category of products; values smaller than 2M₽ are not shown." /></p>
+
+<p>Each product or category has a different selling behavior within the time frame contained in the database. In the figure below we present all the time-distributed sales of the <em>PS3 Games</em> category (the most lucrative category) over the database’s days range to analyze its behavior.</p>
+
+<p><img src="/assets/img/graficosvendas1c_profit-from-toplucrative.png" alt="Income over time from PS3 Games' sales. The first image represents income over time for each day while the second one shows the accumulative income over time." /></p>
+
+<h4 id="what-does-it-tell-us">What does it tell us?</h4>
+<p>The sales revenue analysis could show the marketing team which of the most profitable categories can be exploited by the company’s advertising team to increase the total income from sales. Also, eight product categories had a total of <strong>zero sales</strong> during the period analyzed, which means there is an allocation of human and financial resources as well as storage occupation that can be reversed without interfering with store sales rate.</p>
+
+<h2 id="sales-forecast-from-database">Sales Forecast from Database</h2>
+<h3 id="model-choice">Model Choice</h3>
+<p>To make sales forecasts, it is common practice to perform a linear regression on the accumulated revenue over time. The Linear Regression model creates a straight line with the best configuration to represent all revenue generated by sales over time with the smallest error associated with adjusting points.</p>
+
+<p>After some research, it was decided to compare this simpler and more traditional method, the Linear Regression, with an artificial intelligence regression, in this case, an <em>LSTM</em> (Short Long-Term Memory). Before applying it to find the final forecast, both the Linear Regression and LSTM methods were tested on all 84 item categories; Out of the 638 days recorded in the database, the first 607 were used to train the models and the last 31 days were used to validate them; This means that models will try to forecast sales in the last 31 known days based on the 607 other days. The image below shows the mean square root error (MSRE) associated with each model applied to the 84 categories. <strong>MSRE values of LSTM models were lower than linear models in more than 83% of categories in the validation test</strong>, so this model is chosen to forecast sales.</p>
+
+<p><img src="/assets/img/graficosvendas1c_MSRE-tests.png" alt="MSRE from validation tests on both Linear Regression and LSTM models. Only the 44 greatest values from the Linear models are shown, with its respective MSRE from the LSTM model on the other side of the y-axis." /></p>
+
+<h3 id="forecast-by-category">Forecast by Category</h3>
+<p>The configuration chosen to the <em>LSTM</em> neural network is the same for all 84 categories: five consecutive days are used as income to the NN to forecast sales on the sixth. For each category, its respective set of 638 known sales days is used to power the neural network in its training 180 times before making any predictions.</p>
+
+<p>In the figure below we show the prediction made for the most lucrative category from the database. The green color shows the last 31 days of sales in the database and the red sales forecast by the neural network.</p>
+
+<p><img src="/assets/img/graficosvendas1c_ps3games-profitforecast.png" alt="PS3 Games profit forecast for October/2014 based upon the sales revenue within January/2013 and September/2014." /></p>
+
+<h3 id="final-sales-forecast-result">Final Sales Forecast Result</h3>
+<p>The prediction process took a few hours on my Desktop: for each of the 84 categories, a neural network is created to be trained with <code class="highlighter-rouge">638 * 180 = 114840</code> days of sales. After all training repetitions, <strong>more than 360 million sales records are used for training LSTM Networks</strong> to obtain the final forecast for October 2014, shown in the figure below. Mind the increase of the income, which is 37% greater than its previous month.</p>
+
+<p><img src="/assets/img/graficosvendas1c_profitresults.png" alt="Profit from the last month of registered sales vs. the forecast to the next month's income." /></p>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Forecasting Sales using LSTM Neural Networks&url=/lstm-forecast-1c" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=/lstm-forecast-1c" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=/lstm-forecast-1c" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+            <a href="/tags#Artificial Intelligence" class="tag">&#35; Artificial Intelligence</a>
+          
+            <a href="/tags#Data Analysis" class="tag">&#35; Data Analysis</a>
+          
+            <a href="/tags#Matlab" class="tag">&#35; Matlab</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
