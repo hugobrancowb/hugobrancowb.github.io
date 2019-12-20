@@ -102,6 +102,17 @@ a {
   -webkit-text-decoration-skip: objects;
   /* 2 */
 }
+/* hugo edicao*/
+a,a:visited,a:hover {
+  color: #386fa4;
+  font-weight: 600;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
 
 /**
  * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
@@ -444,7 +455,7 @@ template {
 }
 
 .highlighter-rouge {
-  color: #ce887b;
+  color: #386fa4;
   font-weight: 400;
   border: 1px solid #607D8B;
   -webkit-border-radius: 3px;
@@ -1390,6 +1401,7 @@ ul.languages a:visited,
 ul.languages a:hover {
   color: #ffffff;
   text-decoration: none;
+  font-weight: 400;
 }
 
 ul.languages > li {
@@ -1407,6 +1419,21 @@ div.lang-options ul > li:first-child {
 }
 div.lang-options ul > li:last-child {
   margin-right: auto;
+}
+
+/* github botão button call to action */
+div.githubCodeWrap {
+  margin-top: 7px;
+}
+.githubbutton {
+  background-color: #151a2b;
+  font-weight: 400;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+}
+.githubbutton > i {
+  margin-right: 7px;
 }
 
 /* - - - - - - - - - - Media Styles - - - - - - - - - - */
