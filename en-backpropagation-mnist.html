@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>Multilayer Backpropagation to train and classify handwritten numbers (MNIST) - Portfólio - Hugo Branco</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Portfólio - Hugo Branco" property="og:site_name">
+  
+    <meta content="Multilayer Backpropagation to train and classify handwritten numbers (MNIST)" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Control and Automation Engineering student at Universidade de Pernambuco (UPE - Brazil)" property="og:description">
+  
+  
+    <meta content="https://hugobrancowb.github.io//en-backpropagation-mnist" property="og:url">
+  
+  
+    <meta content="2019-12-18T12:00:00-03:00" property="article:published_time">
+    <meta content="https://hugobrancowb.github.io//about/" property="article:author">
+  
+  
+    <meta content="https://hugobrancowb.github.io//assets/img/mnist_exemplo.png" property="og:image">
+  
+  
+    
+    <meta content="en" property="article:section">
+    
+  
+  
+    
+    <meta content="Artificial Intelligence" property="article:tag">
+    
+    <meta content="C" property="article:tag">
+    
+    <meta content="Matlab" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Multilayer Backpropagation to train and classify handwritten numbers (MNIST)">
+  
+  
+    <meta name="twitter:url" content="https://hugobrancowb.github.io//en-backpropagation-mnist">
+  
+  
+    <meta name="twitter:description" content="Control and Automation Engineering student at Universidade de Pernambuco (UPE - Brazil)">
+  
+  
+    <meta name="twitter:image:src" content="https://hugobrancowb.github.io//assets/img/mnist_exemplo.png">
+  
+
+	<meta name="description" content="Control and Automation Engineering student at Universidade de Pernambuco (UPE - Brazil)">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/fav.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.jpg" alt="Hugo Branco"></a>
+      </div>
+      <div class="author-name">Hugo Branco</div>
+      <p>Control and Automation Engineering student at Universidade de Pernambuco (UPE - Brazil)</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>      
+    <section class="contact">
+      <h3 class="contact-title">Contact</h3>
+      <ul>
+        
+        
+        
+          <li class="github"><a href="http://github.com/hugobrancowb" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/hugo-branco-627801136" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:hugobrancowb@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <ul class="languages">      
+      
+      
+      <li><a href="../">Português</a></li>
+      
+      
+      <li><a href="/en/">English</a></li>
+      
+    </ul>
+    <div class="copyright">
+      <p>2019 &copy; Hugo Branco</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/assets/img/mnist_exemplo.png alt="Multilayer Backpropagation to train and classify handwritten numbers (MNIST)">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Multilayer Backpropagation to train and classify handwritten numbers (MNIST)</h1>
+        <div class="page-date"><span>2019, Dec 18&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+           <!-- Idiomas -->
+            
+            
+            
+              <div class="lang-options">
+                  <ul>
+                  
+                  <li><a href="/en-backpropagation-mnist" class='highlighter-rouge' title='View in English'>English</a></li>
+                  
+                  <li><a href="/backpropagation-mnist" class='highlighter-rouge' title='View in Português'>Português</a></li>
+                  
+                  </ul>
+              </div>
+            
+          
+          <div class="githubCodeWrap">
+            
+            <ul class="languages">
+              <li ><a class="githubbutton" href="http://github.com/hugobrancowb/backpropagationForMNISTdataset" target="_blank"><i class="fa fa-github"></i>View repository</a></li>
+            </ul>
+            
+          </div>
+      </header>
+      <h2 id="mnist">MNIST</h2>
+<p><a href="http://yann.lecun.com/exdb/mnist/">MNIST</a> is a database with a total of <strong>70,000 images</strong> of handwritten numbers. The size of the database makes it ideal for artificial intelligence training and experimentation focused on image classification, so it was a great database for my first artificial intelligence project. Each image has a size of 28x28 pixels, each pixel has values ​​ranging from 0 to 255 as brightness values, and each image has a label to indicate the number represented by its image to aid the neural network learning process. The entire base is compressed and saved in binary format to save storage.</p>
+
+<p><img src="/assets/img/mnist_sample.gif" alt="Examples of MNIST base images." /></p>
+
+<h2 id="multilayer-backpropagation">Multilayer Backpropagation</h2>
+<p>Multilayer Backpropagation has that first half of its name due to the structuring of its perceptrons in the neural network, which contributes to both positive and negative ways of its functioning. The neural network is said to have multiple layers because all the calculations and results that go through the perceptrons can be divided into steps or phases; In each of these steps, a certain number of perceptrons architechtured by the programmer receives information from the previous layer, perform calculations, and pass them on to a next step in the learning process. <strong>The multilayer system has the advantage of allowing the neural network to classify data into three or more outputs</strong>, while its disadvantage is the difficulty of adapting its perceptrons to better recognize input data to their respective output values ​​due to the high connectivity between perceptrons.</p>
+
+<p>The term backpropagation comes from the form in which the network is transformed to create or improve the links between input and output information. First, in the forward phase, the input data is processed by the first layer’s perceptrons, as argument of a differentiable function, resulting in new values to then be processed through the next perceptron layer, going through another differentiable function again, and so on until all layers evaluates data and the final result is processed. In the second phase, called the backward phase, the error function quantify the error associated with the neural network’s classification. That resulting error goes back through new functions (derivatives of the forward phase functions) so that the error can be backpropagated throughout the neural network to modify its weights and bias of each perceptron, improving the network classification process. To obtain the best possible network, the error should be minimal. Knowing that the error is a differentiable function from the input data, we can find its minimum value by calculating its gradient.</p>
+
+<p><img src="/assets/img/mnist_backpropagationexemplo.png" alt="Example of backpropagation. Source: NNDesign - Hagan et. al." /></p>
+
+<h2 id="properties-choice-for-the-neural-network">Properties choice for the neural network</h2>
+<p>Several adjustments can be made to the neural network to improve its learning process or change the training duration. Because this neural network was built with C language, many features aren’t adjusted due to the difficulty to perform simple tasks with this programming language such as evaluating matrixes multiplications and allocating memory (these tasks are much harder while using C when you’re working with more than 54 million input values ​​and 266,000 network parameters). Therefore, the only adjustments made to the network properties were on the number of neurons used in each layer (as well as the number of layers used) and the choice of the best learning rate value.</p>
+
+<p>For the first property, care must be taken with both the excess and the lack of neurons in the network; A good choice about the numbers of neurons and layers can result in a fast and efficient neural network. In this project, three layers were used, with 300 neurons in the first layer, 100 in the second and 10 neurons in the output layer. With the neural network architecture defined, several tests were performed testing different values ​​for the learning rate and the results are presented in the table (or image) below; values ​​outside the learning rate range showed higher percentage errors. For the tests, only 6000 images for training and 4000 images for neural network tests were used. The table below shows different percentage values ​​for the error associated with each learning rate.</p>
+
+<p><img src="/assets/img/mnist_learningrate.png" alt="Learning rate values vs. Error." /></p>
+
+<p>The network accuracy with the chosen architecture was approximately 87.64%. Later, I decided to use the same algorithm but this time using Matlab with also all available samples from the dataset; in Matlab, I had easier to allocate data and work with all images at the same time. <strong>The result of the increase of images in the test sample was a neural network with 93.8% of precision in numbers classification.</strong> Interested in the origin of errors in the classification of the network even after a significant increase in the sample used for training, I decided to generate some of the images along with the values sorted by the network as well as its correct label, shown in the image below. <strong>One can notice that the numbers can easily confuse even human readers.</strong> Therefore, in this case, we may think that the neural network has a good enough accuracy rate when the written number is not such an unreadable scribble.</p>
+
+<p><img src="/assets/img/mnist_erros.png" alt="Example of bad guesses from the network." /></p>
+
+      <div class="page-footer">
+        <div class="page-share">           
+          <a href="https://twitter.com/intent/tweet?text=Multilayer Backpropagation to train and classify handwritten numbers (MNIST)&url=https://hugobrancowb.github.io//en-backpropagation-mnist" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=https://hugobrancowb.github.io//en-backpropagation-mnist" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://linkedin.com/shareArticle?mini=true&source=Portf%C3%B3lio+-+Hugo+Branco&summary=Project portfolio for Artificial Intelligence, Data Science and Web Design projects I’ve worked on.
+&title=Multilayer+Backpropagation+to+train+and+classify+handwritten+numbers+%28MNIST%29&url=https://hugobrancowb.github.io//en-backpropagation-mnist" title="Share on LinkedIn" rel="nofollow" target="_blank" data-ml="true">LinkedIn</a>
+        </div>
+        <div class="page-tag">
+          
+            <a href="/tags#Artificial Intelligence" class="tag">&#35; Artificial Intelligence</a>
+          
+            <a href="/tags#C" class="tag">&#35; C</a>
+          
+            <a href="/tags#Matlab" class="tag">&#35; Matlab</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

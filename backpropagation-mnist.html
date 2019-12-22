@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>Reconhecimento de números utilizando Multilayer Backpropagation - Portfólio - Hugo Branco</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Portfólio - Hugo Branco" property="og:site_name">
+  
+    <meta content="Reconhecimento de números utilizando Multilayer Backpropagation" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Estudante de Engenharia de Controle e Automação pela Universidade de Pernambuco (UPE)" property="og:description">
+  
+  
+    <meta content="https://hugobrancowb.github.io//backpropagation-mnist" property="og:url">
+  
+  
+    <meta content="2019-12-18T12:00:00-03:00" property="article:published_time">
+    <meta content="https://hugobrancowb.github.io//about/" property="article:author">
+  
+  
+    <meta content="https://hugobrancowb.github.io//assets/img/mnist_exemplo.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="Inteligência Artificial" property="article:tag">
+    
+    <meta content="C" property="article:tag">
+    
+    <meta content="Matlab" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Reconhecimento de números utilizando Multilayer Backpropagation">
+  
+  
+    <meta name="twitter:url" content="https://hugobrancowb.github.io//backpropagation-mnist">
+  
+  
+    <meta name="twitter:description" content="Estudante de Engenharia de Controle e Automação pela Universidade de Pernambuco (UPE)">
+  
+  
+    <meta name="twitter:image:src" content="https://hugobrancowb.github.io//assets/img/mnist_exemplo.png">
+  
+
+	<meta name="description" content="Estudante de Engenharia de Controle e Automação pela Universidade de Pernambuco (UPE)">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/fav.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.jpg" alt="Hugo Branco"></a>
+      </div>
+      <div class="author-name">Hugo Branco</div>
+      <p>Estudante de Engenharia de Controle e Automação pela Universidade de Pernambuco (UPE)</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>      
+    <section class="contact">
+      <h3 class="contact-title">Contato</h3>
+      <ul>
+        
+        
+        
+          <li class="github"><a href="http://github.com/hugobrancowb" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/in/hugo-branco-627801136" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:hugobrancowb@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <ul class="languages">      
+      
+      
+      <li><a href="../">Português</a></li>
+      
+      
+      <li><a href="/en/">English</a></li>
+      
+    </ul>
+    <div class="copyright">
+      <p>2019 &copy; Hugo Branco</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/assets/img/mnist_exemplo.png alt="Reconhecimento de números utilizando Multilayer Backpropagation">
+        
+          <figcaption>Exemplos de imagens da base MNIST. Fonte - Wikipedia.</figcaption>
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Reconhecimento de números utilizando Multilayer Backpropagation</h1>
+        <div class="page-date"><span>2019, Dec 18&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+           <!-- Idiomas -->
+            
+            
+            
+              <div class="lang-options">
+                  <ul>
+                  
+                  <li><a href="/en-backpropagation-mnist" class='highlighter-rouge' title='View in English'>English</a></li>
+                  
+                  <li><a href="/backpropagation-mnist" class='highlighter-rouge' title='View in Português'>Português</a></li>
+                  
+                  </ul>
+              </div>
+            
+          
+          <div class="githubCodeWrap">
+            
+            <ul class="languages">
+              <li ><a class="githubbutton" href="http://github.com/hugobrancowb/backpropagationForMNISTdataset" target="_blank"><i class="fa fa-github"></i>Acessar repositório</a></li>
+            </ul>
+            
+          </div>
+      </header>
+      <h2 id="mnist">MNIST</h2>
+<p><a href="http://yann.lecun.com/exdb/mnist/">MNIST</a> é uma database com o total de <strong>70.000 imagens</strong> de algarismos escritos à mão. O tamanho da database a torna ideal para treinamento e experimentação em inteligência artificial voltada para classificação de imagens, portanto foi uma ótima base de dados para meu primeiro projeto de inteligência artificial. Cada imagem da base tem dimensão 28x28 pixels, cada pixel tem valores que variam entre 0 e 255 para dar forma à imagem, e cada imagem possui um rótulo para informar qual o número representado pela respectiva imagem a fim de facilitar o processo de aprendizado das redes neurais. Toda a base é comprimida e salva em formato binário para facilitar armazenamento e acesso.</p>
+
+<p><img src="/assets/img/mnist_sample.gif" alt="Exemplos de imagens da base MNIST. Fonte: Wikipedia." /></p>
+
+<h2 id="multilayer-backpropagation">Multilayer Backpropagation</h2>
+
+<p>Na <em>Multilayer Backpropagation</em>, a primeira metade de seu nome resulta da estruturação de seus perceptrons na rede neural, que tem como consequência os pontos tanto positivos quanto negativos de seu funcionamento. Diz-se que a rede neural possui múltiplas camadas pois o processamento das informações através dos perceptrons pode ser dividido em etapas; em cada uma destas etapas, um certo número de perceptrons escolhido pelo programador recebe informações da camada anterior, executa cálculos com as mesmas e as repassa para uma próxima etapa do processo de aprendizado. <strong>O sistema de múltiplas camadas tem como vantagem permitir que a rede neural construída possa distinguir três ou mais padrões de dados de entrada</strong>, ao passo que sua desvantagem, também causada pela estruturação multi camadas, é a dificuldade de transformar seus perceptrons a fim de relacionarem melhor os dados de entrada a seus respectivos valores de saída devido a alta conectividade entre os perceptrons.</p>
+
+<p>O termo <em>backpropagation</em> tem origem na forma da qual a rede se transforma a fim de criar ou melhorar a relação entre os dados de entrada e a saída da informação processada. Primeiro, na fase de progresso (termo livremente traduzido à partir da expressão <em>foward phase</em>), as informações de entrada são captadas por todos perceptrons da primeira camada, processadas por uma função diferenciável em cada um deles resultando num subproduto para, então, ser processador pela camada de perceptrons seguinte, passando novamente por outra função diferenciável, e assim por diante até que todas camadas recebam os dados de entrada e o resultado final seja processado. Na segunda fase, chamada fase de retorno (ou <em>backward phase</em>), um sinal de erro é gerado ao comparar o resultado processado com o resultado esperado. O sinal passa por novas funções (derivadas das funções da fase de progresso) para que uma correção possa ser retropropagada (<em>backpropagated</em>) por toda rede neural com o objetivo de modificar os pesos de cada perceptron, melhorando o processo de classificação da rede. Para obter a melhor rede neural possível, o erro final deve ser mínimo. Sabendo que o erro é uma função diferenciável dos dados de entrada, podemos encontrar seu valor mínimo à partir do cálculo de seu gradiente.</p>
+
+<p><img src="/assets/img/mnist_backpropagationexemplo.png" alt="Exemplo de backpropagation. Fonte: NNDesign - Hagan et. al." /></p>
+
+<h2 id="propriedades-da-rede-neural-utilizada">Propriedades da rede neural utilizada</h2>
+<p>Existem diversos ajustes que podem ser feitos na rede neural a fim de melhorar seu processo de aprendizado ou alterar o tempo de processamento de acordo com a necessidade. Como essa rede neural foi construída utilizando C, muitos recursos deixaram de ser explorados devido à dificuldade de se trabalhar com a linguagem para realizar tarefas simples como multiplicação de matrizes e alocação de memória (essas tarefas tornam-se muito mais complexas utilizando C quando se trabalha com, no total, mais de 54 milhões valores de entrada e mais de 266 mil parâmetros na rede). Portanto, os unicos ajustes feitos nas propriedades da rede foram na escolha da quantidade de neurons utilizados em cada camada (assim como a quantidade de camadas utilizadas) e na escolha da melhor taxa de aprendizado (<em>learning rate</em>).</p>
+
+<p>Para a primeira propriedade, é necessário ter cuidado tanto com o excesso quanto com a falta de neurons na rede; uma boa escolha na quantidade de neurons e camadas resulta numa rede neural rápida e eficiente. Nesse projeto, utilizou-se três camadas, com 300 na primeira, 100 na segunda e 10 neurons na camada de saída. Com a arquitetura da rede neural definida, vários testes foram realizados testando diferentes valores para a <em>learning rate</em> e os resultados apresentam-se na imagem abaixo; valores fora do intervalo trabalhado apresentaram erro percentual muito alto. Para a realização dos testes, foram utilizadas apenas 6000 imagens para treino e 4000 para teste da rede neural. A tabela abaixo apresenta diferentes valores percentuais para o erro associado a cada <em>learning rate</em>.</p>
+
+<p><img src="/assets/img/mnist_learningrate.png" alt="Erros associados a suas respectivas taxas de aprendizado" /></p>
+
+<p>Portanto a precisão da rede, nesse momento, foi de aproximadamente 87,64%. Mais tarde decidi o mesmo algoritmo porém em Matlab e utilizando toda base de dados disponível; no Matlab, tive maior facilidade para alocar dados e trabalhar com todas imagens ao mesmo tempo. <strong>O resultado do aumento da amostra de testes foi uma rede neural com precisão de 93,8% no reconhecimento dos algarismos.</strong> Curioso com a causa dos erros na classificação da rede mesmo após um aumento significativo da amostra utilizada para treino, decidi gerar algumas das imagens junto com os valores classificados pela rede assim como a legenda correta, exibidos na imagem abaixo. <strong>É possível perceber que as imagens podem facilmente causar confusão até mesmo em humanos</strong>. Portanto, nesse caso, talvez possamos julgar que a rede neural tem uma taxa de acertos boa o suficiente quando o número escrito não é um garrancho ilegível.</p>
+
+<p><img src="/assets/img/mnist_erros.png" alt="Exemplo das imagens que nossa rede classificou erroneamente." /></p>
+
+
+      <div class="page-footer">
+        <div class="page-share">           
+          <a href="https://twitter.com/intent/tweet?text=Reconhecimento de números utilizando Multilayer Backpropagation&url=https://hugobrancowb.github.io//backpropagation-mnist" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=https://hugobrancowb.github.io//backpropagation-mnist" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://linkedin.com/shareArticle?mini=true&source=Portf%C3%B3lio+-+Hugo+Branco&summary=Project portfolio for Artificial Intelligence, Data Science and Web Design projects I’ve worked on.
+&title=Reconhecimento+de+n%C3%BAmeros+utilizando+Multilayer+Backpropagation&url=https://hugobrancowb.github.io//backpropagation-mnist" title="Share on LinkedIn" rel="nofollow" target="_blank" data-ml="true">LinkedIn</a>
+        </div>
+        <div class="page-tag">
+          
+            <a href="/tags#Inteligência Artificial" class="tag">&#35; Inteligência Artificial</a>
+          
+            <a href="/tags#C" class="tag">&#35; C</a>
+          
+            <a href="/tags#Matlab" class="tag">&#35; Matlab</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
