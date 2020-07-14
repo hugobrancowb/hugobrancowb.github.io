@@ -33,6 +33,10 @@
     
     <meta content="Front-end" property="article:tag">
     
+    <meta content="Back-end" property="article:tag">
+    
+    <meta content="Full Stack" property="article:tag">
+    
     <meta content="Angular" property="article:tag">
     
     <meta content="NodeJS" property="article:tag">
@@ -166,14 +170,33 @@
 
 <p><img src="https://hugobrancowb.github.io/assets/img/destaque.jpg" alt="Destaque para imagens já adicionadas ao Mural" /></p>
 
+<h2 id="compartilhe-seu-mural">Compartilhe seu Mural</h2>
+<p>A nova funcionalidade implementada na versão 1.0.2 permite ao usuário que seu mural seja compartilhado com outros usuários através de um link. Ao escolher a opção de <em>Compartilhar Mural</em>, uma <em>POST Request</em> é realizada para salvar a lista em questão na database do servidor da <strong><a href="https://muralapp.me">MuralApp.me</a></strong> e retorna ao usuário o link para compartilhamento.</p>
+
+<p>Através do uso da <em>Angular RouterModule</em>, é possível obter o código do Mural compartilhado através do parâmetro encontrado no final da URL. O código é enviado ao servidor através de uma <em>GET Request</em> para obter a <em>array</em> de imagens desejada como resposta.</p>
+
+<p>Utilize um dos links a seguir para experimentar o compartilhamento por links ou crie seu próprio Mural.</p>
+
+<p>Exemplo 1: <a href="https://muralapp.me/mural/asdfg">muralapp.me/mural/asdfg</a><br />
+Exemplo 2: <a href="https://muralapp.me/mural/670105b0">muralapp.me/mural/670105b0</a><br />
+Exemplo 3: <a href="https://muralapp.me/mural/a7addc60">muralapp.me/mural/a7addc60</a></p>
+
 <h2 id="versões">Versões</h2>
-<h3 id="v101">v1.0.1</h3>
+<h3 id="v102">v1.0.2</h3>
 <ul>
-  <li>Melhoria no favicon.ico do site.</li>
-  <li>Adição de uma grid com placeholders ao executar uma busca para indicar seu processamento.</li>
-  <li>Adição de botão de ‘remover’ nas imagens do search que já estão na lista; adição de botão de ‘abrir externo’ nas imagens do search</li>
-  <li>Previne o usuário de adicionar um placeholder à lista ou abrir link em janela externa.</li>
-  <li>Memoriza o último mural salvo através de cookies + msg aviso de cookies
+  <li>Adicionada funcionalidade que utiliza um POST Method para salvar um Mural na database do servidor e retornar ao usuário um link para compartilhar sua lista;</li>
+  <li>Complementando o item anterior, tornou-se possível acessar um Mural salvo em database através de uma URL; essa feature se utiliza de parâmetros da URL para enviar uma GET Request ao servidor e obter a lista de imagens relacionada à ID em questão;</li>
+  <li>Melhoria na UX para facilitar o compartilhamento de um Mural através de um link;</li>
+  <li>Nova funcionalidade informa ao usuário a quantidade de imagens presente em seu Mural através de um indicador na <em>navbar</em> do app;</li>
+  <li>Cookies desativados devido a um limite no tamanho que impedia o armazenamento de mais que 3~4 imagens;</li>
+  <li>Todas requisições <em>http</em> são redirecionadas para <em>https</em>.
+    <h3 id="v101">v1.0.1</h3>
+  </li>
+  <li>Melhoria no favicon.ico do site;</li>
+  <li>Adição de uma grid com placeholders ao executar uma busca para indicar seu processamento;</li>
+  <li>Adição de botão de ‘remover’ nas imagens do search que já estão na lista; adição de botão de ‘abrir externo’ nas imagens do search;</li>
+  <li>Previne o usuário de adicionar um placeholder à lista ou abrir link em janela externa;</li>
+  <li>Memoriza o último mural salvo através de cookies + msg aviso de cookies.
     <h3 id="v100-mvp">v1.0.0-mvp</h3>
     <p>Primeira versão lançada com funcionalidades mínimas.</p>
   </li>
@@ -192,6 +215,10 @@
         <div class="page-tag">
           
             <a href="/tags#Front-end" class="tag">&#35; Front-end</a>
+          
+            <a href="/tags#Back-end" class="tag">&#35; Back-end</a>
+          
+            <a href="/tags#Full Stack" class="tag">&#35; Full Stack</a>
           
             <a href="/tags#Angular" class="tag">&#35; Angular</a>
           
